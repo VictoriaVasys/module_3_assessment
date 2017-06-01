@@ -7,7 +7,7 @@ class BestBuyStore
   def self.find_by_zip(zip)
     bb = BestBuyStoreService.new
     stores = bb.find_by_zip(zip)
-    find = stores.map do |store|
+    stores.map do |store|
       BestBuyStore.new(store)
     end
   end
