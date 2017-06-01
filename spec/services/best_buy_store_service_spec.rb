@@ -13,9 +13,11 @@ describe BestBuyStoreService do
       expect(best_buy_stores.first).to have_key(:phone)
       expect(best_buy_stores.first).to have_key(:city)
       expect(best_buy_stores.first).to have_key(:distance)
-      # expect(best_buy_stores.first[:date][:weekday]).to be_a(String)
-      # expect(best_buy_stores.first[:date][:monthname]).to be_a(String)
-      # expect(best_buy_stores.first[:date][:day]).to be_an(Integer)
+      expect(best_buy_stores.first[:storeType]).to be_a(String)
+      expect(best_buy_stores.first[:storeType]).to be_a(String)
+      expect(best_buy_stores.first[:storeType]).to be_a(String)
+      expect(best_buy_stores.first[:storeType]).to be_a(String)
+      expect(best_buy_stores.first[:storeType]).to be_a(String)
     end
   end
   

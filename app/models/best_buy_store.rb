@@ -6,7 +6,11 @@ class BestBuyStore
   
   def self.find_by_zip(zip)
     bb = BestBuyStoreService.new
-    bb.find_by_zip(zip)
+    stores = bb.find_by_zip(zip)
+    find = stores.map do |store|
+      BestBuyStore.new(store)
+    end
+    binding.pry
   end
   
   def self.total_stores(zip)
@@ -18,8 +22,20 @@ class BestBuyStore
     attrs[:longName]
   end
   
-  def long_name
-    attrs[:longName]
+  def city
+    attrs[:city]
+  end
+  
+  def distance
+    attrs[:distance]
+  end
+  
+  def phone
+    attrs[:phone]
+  end
+  
+  def type
+    attrs[:storeType]
   end
   
   private
