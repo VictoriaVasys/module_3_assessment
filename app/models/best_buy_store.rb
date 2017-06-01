@@ -9,8 +9,17 @@ class BestBuyStore
     bb.find_by_zip(zip)
   end
   
+  def self.total_stores(zip)
+    bb = BestBuyStoreService.new
+    bb.total_stores_by_zip(zip)
+  end
+  
   def long_name
-    #code
+    attrs[:longName]
+  end
+  
+  def long_name
+    attrs[:longName]
   end
   
   private

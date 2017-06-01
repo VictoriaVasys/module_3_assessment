@@ -1,5 +1,6 @@
 <h1><%= "Best Buy Stores within 20 miles of #{@zip}" %> </h1>
 
+<h2><%= @total_stores %> Total Stores</h2>
 <% @best_buy_stores.each do |best_buy_store| %>
   <div class="best_buy_store">
     <%= best_buy_store.long_name, class:"best_buy_store_long_name" %>

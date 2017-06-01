@@ -1,8 +1,15 @@
 class SearchController < ApplicationController
   
   def index
-    @zip = params[:search_box]
-    @best_buy_stores = BestBuyStore.find_by_zip(params[:search_box])
+    @zip = zip
+    @total_stores = BestBuyStore.total_stores(zip)
+    @best_buy_stores = BestBuyStore.find_by_zip(zip)
+  end
+  
+  private
+  
+  def zip
+    params[:search_box]
   end
   
 end
