@@ -27,7 +27,7 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data('<key>') { ENV['key'] }
+  config.filter_sensitive_data('<BEST_BUY_KEY>') { ENV['BEST_BUY_KEY'] }
   config.allow_http_connections_when_no_cassette = true
 end
 
