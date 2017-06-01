@@ -10,7 +10,6 @@ class BestBuyStore
     find = stores.map do |store|
       BestBuyStore.new(store)
     end
-    binding.pry
   end
   
   def self.total_stores(zip)

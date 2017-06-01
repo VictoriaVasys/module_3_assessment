@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bestbuy.com/v1/stores(area(80202,25))?apiKey=<BEST_BUY_KEY>&format=json&pageSize=10&show=storeId,storeType,longName,phone,city,distance
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '3628800'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 01 Jun 2017 16:44:50 GMT
+      Server:
+      - Best Buy Public APIs
+      X-Cache-Hit:
+      - 'true'
+      Content-Length:
+      - '1685'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"from":1,"to":10,"currentPage":1,"total":16,"totalPages":2,"queryTime":"0.009","totalTime":"0.024","partial":false,"canonicalUrl":"/v1/stores(area(\"80202\",25))?show=storeId,storeType,longName,phone,city,distance&pageSize=10&format=json&apiKey=<BEST_BUY_KEY>","stores":[{"storeId":2740,"storeType":"Mobile
+        SAS","longName":"BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER","phone":"303-270-9189","city":"DENVER","distance":3.45},{"storeId":1224,"storeType":"Big
+        Box","longName":"BEST BUY - BELMAR","phone":"303-742-8039","city":"LAKEWOOD","distance":5.31},{"storeId":211,"storeType":"Big
+        Box","longName":"BEST BUY - COLORADO BLVD","phone":"303-758-5805","city":"DENVER","distance":5.59},{"storeId":382,"storeType":"Big
+        Box","longName":"BEST BUY - DENVER WEST","phone":"303-273-5617","city":"LAKEWOOD","distance":8.39},{"storeId":209,"storeType":"Big
+        Box","longName":"BEST BUY - WESTMINSTER","phone":"303-426-4434","city":"WESTMINSTER","distance":8.52},{"storeId":1416,"storeType":"Big
+        Box","longName":"BEST BUY - NORTHGLENN","phone":"303-252-8677","city":"DENVER","distance":9.14},{"storeId":2730,"storeType":"Mobile
+        SAS","longName":"BEST BUY MOBILE - TOWN CENTER AT AURORA","phone":"303-326-0848","city":"AURORA","distance":9.73},{"storeId":217,"storeType":"Big
+        Box","longName":"BEST BUY - AURORA","phone":"303-338-5797","city":"AURORA","distance":9.79},{"storeId":210,"storeType":"Big
+        Box","longName":"BEST BUY - LITTLETON","phone":"303-932-7830","city":"LAKEWOOD","distance":10.44},{"storeId":1171,"storeType":"Big
+        Box","longName":"BEST BUY - SOUTHGLENN","phone":"303-797-3246","city":"CENTENNIAL","distance":11.02}],"warnings":"Distances
+        are in terms of miles (default)"}'
+    http_version: 
+  recorded_at: Thu, 01 Jun 2017 16:43:50 GMT
+recorded_with: VCR 3.0.3

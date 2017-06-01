@@ -10,7 +10,7 @@ describe BestBuyStore do
         "phone": "303-270-9189",
         "city": "DENVER",
         "distance": 3.45
-      },
+      }
 
     best_buy_store = BestBuyStore.new(raw_store)
 
@@ -23,12 +23,14 @@ describe BestBuyStore do
   
   context ".find_by_zip(zip)" do
     it "finds stores based on zip code" do
-      best_buy_stores = BestBuyStore.find_by_zip(80202)
-      best_buy_store = best_buy_stores.first
-      
-      expect(best_buy_stores).to be_an(Array)
-      expect(best_buy_stores.count).to eq(10)
-      expect(best_buy_store.long_name).to eq("BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER")
+      VCR.use_cassette('bb_store', record: :new_episodes) do
+        best_buy_stores = BestBuyStore.find_by_zip(80202)
+        best_buy_store = best_buy_stores.first
+        
+        expect(best_buy_stores).to be_an(Array)
+        expect(best_buy_stores.count).to eq(10)
+        expect(best_buy_store.long_name).to eq("BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER")
+      end
     end
   end
 end

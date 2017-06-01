@@ -1,12 +1,14 @@
 <h1><%= "Best Buy Stores within 20 miles of #{@zip}" %> </h1>
 
-<h2><%= @total_stores %> Total Stores</h2>
+<h2><%= @total_stores %> Total Stores</h2><br><br>
 <% @best_buy_stores.each do |best_buy_store| %>
   <div class="best_buy_store">
-    <%= best_buy_store.long_name, class:"best_buy_store_long_name" %>
-    <%= best_buy_store.city, class:"best_buy_store_city" %>
-    <%= best_buy_store.distance, class:"best_buy_store_distance" %>
-    <%= best_buy_store.phone, class:"best_buy_store_phone" %>
-    <%= best_buy_store.type, class:"best_buy_store_type" %>
+    <ul>
+      <h4 class = "best_buy_store_long_name"><%= best_buy_store.long_name %></h4>
+      <li class = "best_buy_store_city"><%= best_buy_store.city %></li>
+      <li class = "best_buy_store_distance"><%= best_buy_store.distance%></li>
+      <li class = "best_buy_store_phone"><%= best_buy_store.phone %></li>
+      <li class = "best_buy_store_type"><%= best_buy_store.type %></li>
+    </ul><br>
   </div>
 <% end %>

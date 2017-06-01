@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "as a user, I should be able to search for best buy stores" do
-  xscenario "by zipcode" do
+  scenario "by zipcode" do
     # As a user
     # When I visit "/"
     visit "/"
