@@ -5,7 +5,7 @@ describe 'items' do
     item_list = create_list(:item, 3)
     get '/api/v1/items'
 
-    expect(response).to be_success
+    expect(response).to have_http_status(200)
 
     items = JSON.parse(response.body)
 
@@ -20,9 +20,9 @@ describe 'items' do
   it "can return one item" do
     item_one = create(:item)
     
-    get "/api/v1/destinations/#{item_one.id}"
+    get "/api/v1/items/#{item_one.id}"
     
-    expect(response).to be_success
+    expect(response).to have_http_status(200)
   
     item = JSON.parse(response.body)
   
@@ -33,4 +33,25 @@ describe 'items' do
     expect(item["image_url"]).to eq(item_one.image_url)
   end
   
+  it "can create new destination" do
+    post "/api/v1/items?name=yoyo&description=swiiiing&image_url=https://www.yo-yo.com/resize/Shared/Images/Product/Teenage-Mutant-Ninja-Turtles-ProYo-Yo-Yo/Duncan_Teenage_Mutant_Ninja_Turtles_ProYo_Yo-Yo_3290NT-OR1-a.png"
+  
+    expect(response).to have_http_status(201)
+  
+    item = JSON.parse(response.body)
+  
+    expect(item).to be_a(Hash)
+    expect(item["name"]).to eq("yoyo")
+    expect(item["description"]).to eq("swiiiing")
+    expect(item["image_url"]).to eq("https://www.yo-yo.com/resize/Shared/Images/Product/Teenage-Mutant-Ninja-Turtles-ProYo-Yo-Yo/Duncan_Teenage_Mutant_Ninja_Turtles_ProYo_Yo-Yo_3290NT-OR1-a.png")
+  end
+  
+  it "can delete exisiting item" do
+    create(:item)
+    delete "/api/v1/items/#{Item.last.id}"
+  
+    expect(response).to have_http_status(204)
+  
+    expect(Item.count).to eq(0)
+  end
 end
