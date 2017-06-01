@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Thu, 01 Jun 2017 16:44:50 GMT
+      - Thu, 01 Jun 2017 18:09:58 GMT
       Server:
       - Best Buy Public APIs
       X-Cache-Hit:
@@ -40,7 +40,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"from":1,"to":10,"currentPage":1,"total":16,"totalPages":2,"queryTime":"0.009","totalTime":"0.024","partial":false,"canonicalUrl":"/v1/stores(area(\"80202\",25))?show=storeId,storeType,longName,phone,city,distance&pageSize=10&format=json&apiKey=<BEST_BUY_KEY>","stores":[{"storeId":2740,"storeType":"Mobile
+      string: '{"from":1,"to":10,"currentPage":1,"total":16,"totalPages":2,"queryTime":"0.022","totalTime":"0.038","partial":false,"canonicalUrl":"/v1/stores(area(\"80202\",25))?show=storeId,storeType,longName,phone,city,distance&pageSize=10&format=json&apiKey=<BEST_BUY_KEY>","stores":[{"storeId":2740,"storeType":"Mobile
         SAS","longName":"BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER","phone":"303-270-9189","city":"DENVER","distance":3.45},{"storeId":1224,"storeType":"Big
         Box","longName":"BEST BUY - BELMAR","phone":"303-742-8039","city":"LAKEWOOD","distance":5.31},{"storeId":211,"storeType":"Big
         Box","longName":"BEST BUY - COLORADO BLVD","phone":"303-758-5805","city":"DENVER","distance":5.59},{"storeId":382,"storeType":"Big
@@ -53,5 +53,5 @@ http_interactions:
         Box","longName":"BEST BUY - SOUTHGLENN","phone":"303-797-3246","city":"CENTENNIAL","distance":11.02}],"warnings":"Distances
         are in terms of miles (default)"}'
     http_version: 
-  recorded_at: Thu, 01 Jun 2017 16:43:50 GMT
+  recorded_at: Thu, 01 Jun 2017 18:11:24 GMT
 recorded_with: VCR 3.0.3

@@ -15,6 +15,8 @@ describe 'items' do
     expect(items.first["name"]).to eq(item_list.first.name)
     expect(items.first["description"]).to eq(item_list.first.description)
     expect(items.first["image_url"]).to eq(item_list.first.image_url)
+    expect(items.first["created_at"]).not_to be_present
+    expect(items.first["updated_at"]).not_to be_present
   end
 
   it "can return one item" do
@@ -31,6 +33,8 @@ describe 'items' do
     expect(item["name"]).to eq(item_one.name)
     expect(item["description"]).to eq(item_one.description)
     expect(item["image_url"]).to eq(item_one.image_url)
+    expect(item["created_at"]).not_to be_present
+    expect(item["updated_at"]).not_to be_present
   end
   
   it "can create new destination" do
@@ -44,6 +48,8 @@ describe 'items' do
     expect(item["name"]).to eq("yoyo")
     expect(item["description"]).to eq("swiiiing")
     expect(item["image_url"]).to eq("https://www.yo-yo.com/resize/Shared/Images/Product/Teenage-Mutant-Ninja-Turtles-ProYo-Yo-Yo/Duncan_Teenage_Mutant_Ninja_Turtles_ProYo_Yo-Yo_3290NT-OR1-a.png")
+    expect(item["created_at"]).not_to be_present
+    expect(item["updated_at"]).not_to be_present
   end
   
   it "can delete exisiting item" do

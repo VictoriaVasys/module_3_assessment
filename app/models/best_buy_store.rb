@@ -1,7 +1,7 @@
 class BestBuyStore
   
   def initialize(raw_store = {})
-    @attrs = raw_store
+    @_attrs = raw_store
   end
   
   def self.find_by_zip(zip)
@@ -39,6 +39,7 @@ class BestBuyStore
   
   private
   
-  attr_reader :attrs
+    attr_reader :_attrs
+    alias_method :attrs, :_attrs
   
 end
